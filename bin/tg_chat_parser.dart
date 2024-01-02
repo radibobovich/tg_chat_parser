@@ -34,7 +34,7 @@ ArgParser buildParser() {
 
 void printUsage(ArgParser argParser) {
   print('Usage: dart tg_chat_parser.dart <path> -u <uid>');
-  print('i.e. dart tg_chat_parser.dart result.json -u 1234567890');
+  print('i.e. dart tg_chat_parser.dart result.json -u user123456789');
   print(argParser.usage);
 }
 
