@@ -58,11 +58,20 @@ void main(List<String> arguments) {
     }
 
     // Act on the arguments provided.
-    print('Positional arguments: ${results.rest}');
-    if (verbose) {
-      print('[VERBOSE] All arguments: ${results.arguments}');
+    // print('Positional arguments: ${results.rest}');
+    // if (verbose) {
+    //   print('[VERBOSE] All arguments: ${results.arguments}');
+    // }
+
+    if (results.rest.length != 1) {
+      printUsage(argParser);
+      return;
     }
 
+    if (!results.wasParsed('uid')) {
+      printUsage(argParser);
+      return;
+    }
     // Parse the chat json file.
     final filePath = results.rest[0];
     final chatParser = ChatParser(filePath);
